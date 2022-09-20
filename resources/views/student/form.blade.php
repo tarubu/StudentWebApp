@@ -3,8 +3,8 @@
 <div class="container">
     <form id="addForm" action="#" method="post">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <label for="student_name" class="form-label">Student Name</label>
+            <input type="text" class="form-control" id="student_name" placeholder="Student Name">
         </div>
         <div class="mb-3">
             <button type="submit" class="btn btn-success">Save</button>
@@ -15,12 +15,16 @@
 <script type="text/javascript">
     "use strict";
     $(document).ready(function() {
-        $('#addFrom').on('submit', function(e) {
+        $('#addForm').on('submit', function(e) {
+            e.preventDefault();
             $.ajax({
                 url:'/student',
                 type: "POST",
                 data: {
                     "_token": "{{ csrf_token() }}"
+                },
+                success:function(response) {
+                    alert(response)
                 }
             })
         })
