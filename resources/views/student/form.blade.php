@@ -23,7 +23,10 @@
                 type: "POST",
                 data: {
                     "_token": "{{ csrf_token() }}",
-                    student_name: $("#addForm").find("#student_name").val()
+                    firstname: $("#addForm").find("#student_name").val(),
+                    lastname: "Boonrerng",
+                    birthdate: "",
+                    faculty_id: ""
                 },
                 success:function(response) {
                     alert(response)

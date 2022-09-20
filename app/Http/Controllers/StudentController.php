@@ -29,7 +29,11 @@ class StudentController extends Controller
 
     // store -> insert student to db  -- C
     public function store(Request $request) {
-        Student::insert($request->student_name, "1234");
+        $firstname = $request->firstname;
+        $lastname = $request->lastname;
+        $birthdate = $request->birthdate;
+        $faculty_id = $request->faculty_id;
+        Student::insert($firstname, $lastname);
         return "Success";
     }
 
