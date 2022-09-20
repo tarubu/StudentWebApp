@@ -17,11 +17,13 @@
     $(document).ready(function() {
         $('#addForm').on('submit', function(e) {
             e.preventDefault();
+            //alert($("#addForm").find("#student_name").val())
             $.ajax({
                 url:'/student',
                 type: "POST",
                 data: {
-                    "_token": "{{ csrf_token() }}"
+                    "_token": "{{ csrf_token() }}",
+                    student_name: $("#addForm").find("#student_name").val()
                 },
                 success:function(response) {
                     alert(response)

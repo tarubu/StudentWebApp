@@ -29,7 +29,8 @@ class StudentController extends Controller
 
     // store -> insert student to db  -- C
     public function store(Request $request) {
-        var_dump($request);
+        Student::insert($request->student_name, "1234");
+        return "Success";
     }
 
     // update -> update student info -- U
